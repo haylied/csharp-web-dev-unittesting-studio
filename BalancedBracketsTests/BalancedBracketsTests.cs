@@ -34,7 +34,7 @@ namespace BalancedBracketsTests
         }
 
         [TestMethod] //4
-        public void MultiBracketsInOddOrder()
+        public void EvenMultiBracketsInOddOrder()
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[[][]]]"));
         }
@@ -45,22 +45,34 @@ namespace BalancedBracketsTests
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("Launchcode"));
         }
 
-        [TestMethod] //6
+        [TestMethod] //6 .. Fail
         public void ReverseBracketsReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]["));
         }
 
-        [TestMethod] //7
+        [TestMethod] //7 .. Fail
         public void OddNumberCharBalancedBracket()
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("]][[]"));
         }
 
-        [TestMethod] //8
+        [TestMethod] //8 .. Fail
         public void EvenNumberCharBalancedBracket()
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("]][]"));
+        }
+
+        [TestMethod] //9 .. Fail
+        public void ReverseBracketWithText()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("Launch]Code["));
+        }
+
+        [TestMethod] //10
+        public void EmptyStringIsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets(""));
         }
     }
 }

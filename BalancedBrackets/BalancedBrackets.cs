@@ -31,14 +31,16 @@ namespace BalancedBracketsNS
                 if (ch == '[')
                 {
                     brackets++;
+                    
                 }
-                else if (ch == ']')
+                else if (ch == ']' && brackets > 0)
                 {
                     brackets--;
+                    return true;
                 }
               
             }
-            return brackets == 0;
+            return false;
         }
     }
 }
