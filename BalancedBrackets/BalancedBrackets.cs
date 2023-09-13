@@ -36,6 +36,7 @@ namespace BalancedBracketsNS
                 {
                     brackets--;
                 }
+              
             }
             return brackets == 0;
         }
